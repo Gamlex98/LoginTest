@@ -20,7 +20,6 @@ export class LoginComponent {
       if (success) {
         const currentUser = this.authService.getCurrentUser();
         if (currentUser) {
-          this.authService.isLoggedIn;
           console.log("Usuario:", this.username);
           console.log("Contraseña:", this.password);
           console.log('Rol del usuario:', currentUser.role);

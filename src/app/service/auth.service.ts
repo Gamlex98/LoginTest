@@ -7,9 +7,9 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private usersUrl = 'assets/users.json';
-  private currentUser: any;
-  private isLoggedInvar: boolean = false;
+  
+  usersUrl = 'assets/users.json';
+  currentUser: any;
 
   constructor(private http: HttpClient) { }
 
@@ -19,15 +19,12 @@ export class AuthService {
         const user = users.find(u => u.username === username && u.password === password);
         if (user) {
           this.currentUser = user;
-          this.isLoggedInvar = true;
           return true;
         } else {
-          this.isLoggedInvar = false;
           return false;
         }
       }),
       catchError(() => {
-        this.isLoggedInvar = false;
         return of(false);
       })
     );
@@ -39,15 +36,10 @@ export class AuthService {
 
   logout(): void {
     this.currentUser = null;
-    this.isLoggedInvar = false;
   }
 
   getCurrentUser(): any {
     return this.currentUser;
-  }
-
-  isLoggedIn(): boolean {
-    return this.isLoggedInvar;
   }
 
   isAdmin(): boolean {
