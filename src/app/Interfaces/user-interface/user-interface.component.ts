@@ -18,5 +18,9 @@ export class UserInterfaceComponent {
     // Navegar de regreso al formulario de inicio de sesión (LoginComponent)
     this.router.navigate(['/login']);
   }
+
+  volverHome() {
+    this.router.navigate(["/home"]);
+  }
   
 }

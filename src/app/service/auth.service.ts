@@ -10,7 +10,7 @@ export class AuthService {
   
   usersUrl = 'assets/users.json';
   currentUser: any;
-  private readonly storageKey = 'currentUser';
+  storageKey = 'currentUser';
 
   constructor(private http: HttpClient) { 
     this.currentUser = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
@@ -48,14 +48,14 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    return this.currentUser && this.currentUser.role === 'admin';
+    return this.currentUser && this.currentUser.role === 'administrador';
   }
 
   isUser(): boolean {
-    return this.currentUser && this.currentUser.role === 'user';
+    return this.currentUser && this.currentUser.role === 'usuario';
   }
 
   isGuest(): boolean {
-    return this.currentUser && this.currentUser.role === 'guest';
+    return this.currentUser && this.currentUser.role === 'invitado';
   }
 }

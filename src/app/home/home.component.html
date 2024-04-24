@@ -1,35 +1,46 @@
+<nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/home">Test Login</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/home"> Muestra a todos los usuarios </a>
-        </li>
-        <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link" routerLink="/admin"> Panel Admin </a>
-          <a class="nav-link"> Eres admin </a>
-          <a class="nav-link"> Tu eres admin  </a>
-        </li>
-        <li class="nav-item" *ngIf="isUser()">
-          <a class="nav-link" routerLink="/user"> Panel Usuario</a>
-          <a class="nav-link"> Eres usuario </a>
-          <a class="nav-link"> Tú eres usuario </a>
-
-        </li>
-        <li class="nav-item" *ngIf="isGuest()">
-          <a class="nav-link" routerLink="/guest">Invitado</a>
-          <a class="nav-link">Eres usuario</a>
-          <a class="nav-link">Tú eres usuario </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Cerrar sesión</a>
-        </li>
-      </ul>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a  href="/home" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Test Login</a>
+              <a class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Todos Roles </a>
+              <a *ngIf="isAdmin()" href="/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Panel Admin</a>
+              <a *ngIf="isAdmin()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción Admin 2</a>
+              <a *ngIf="isAdmin()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción Admin 3</a>
+              <a *ngIf="isUser()" href="/user" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Panel User</a>
+              <a *ngIf="isUser()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción User 2</a>
+              <a *ngIf="isUser()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción User 3</a>
+              <a *ngIf="isGuest()" href="/guest" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Panel Invitado</a>
+              <a *ngIf="isGuest()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción Invitado 2</a>
+              <a *ngIf="isGuest()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"> Opción Invitado 3</a>
+              <a (click)="logout()" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Cerrar sesión </a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">View notifications</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
+
+  <div class="welcome-box">
+    <h1 class="welcome-message">{{ welcomeMessage }}</h1>
+  </div>
+  
+  
+  
   

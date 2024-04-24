@@ -8,9 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  currentUser: any;
+  welcomeMessage: string = '';
+
   constructor(private authService: AuthService , private router: Router) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser();
+    if (this.currentUser) {
+      switch (this.currentUser.role) {
+        case 'administrador':
+          this.welcomeMessage = '¡Bienvenido Administrador!';
+          break;
+        case 'usuario':
+          this.welcomeMessage = '¡Bienvenido Usuario!';
+          break;
+        case 'invitado':
+          this.welcomeMessage = '¡Bienvenido Invitado!';
+          break;
+        default:
+          this.welcomeMessage = '¡Bienvenido!';
+          break;
+      }
+    }
   }
 
   isAdmin(): boolean {
