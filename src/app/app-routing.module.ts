@@ -11,10 +11,12 @@ import { UserGuard } from './guards/userguard.guard';
 import { GuestGuard } from './guards/guestguard.guard';
 import { NotFoundComponent } from './Interfaces/not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'admin', component: AdminInterfaceComponent, canActivate: [AdminGuard] },
   { path: 'user', component: UserInterfaceComponent, canActivate: [UserGuard] },

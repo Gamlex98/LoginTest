@@ -32,18 +32,9 @@ export class LoginComponent {
           });
 
           // Navegar a la ruta correspondiente según el rol del usuario
-          switch (currentUser.role) {
-            case 'admin':
-              this.router.navigate(['admin']);
-              break;
-            case 'user':
-              this.router.navigate(['user']);
-              break;
-            case 'guest':
-              this.router.navigate(['guest']);
-              break;
-          }
+          this.router.navigate(['/home']);
         }
+        
       } else {
         // Mostrar alerta de error
         Swal.fire({

@@ -18,7 +18,14 @@ export class AdminInterfaceComponent {
     });
   }
 
+  volverHome() {
+    this.router.navigate(["/home"]);
+  }
+
   navigateToLogin(): void {
+    // Cerrar sesión antes de navegar de regreso al formulario de inicio de sesión
+    this.authservice.logout();
+
     // Navegar de regreso al formulario de inicio de sesión (LoginComponent)
     this.router.navigate(['/login']);
   }

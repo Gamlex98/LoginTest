@@ -9,6 +9,7 @@ import { GuestInterfaceComponent } from './Interfaces/guest-interface/guest-inte
 import { NotFoundComponent} from './Interfaces/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     UserInterfaceComponent,
     GuestInterfaceComponent,
     NotFoundComponent,
+    HomeComponent
     
   ],
   imports: [
